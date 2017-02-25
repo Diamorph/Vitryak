@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% load staticfiles %}
+{% block garnish %}
+{%for i in dishes %}
+{% if i.type == "гарніри" %}
+    <a href = "/dishes/{{i.id}}" ><p>Назва :{{i.name}}</p></a>
+    <p>Склад: {{i.description}}</p>
+    <p>Вага:{{i.weight}}</p>
+    <p>Ціна :{{i.price}}</p>
+    <p>Вид страви:{{i.type}}</p>
+
+<form action = "/del/{{i.id}}/" method = "POST">{% csrf_token %}
+        <input class  ="button" type = "submit"  value = "Видалити">
+        </form>
+{% endif %}
+{% endfor%}
+{%endblock%}
