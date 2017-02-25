@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'main.html' %}
+{% load staticfiles %}
+{% block garnish %}
+{%for i in dishes %}
+{% if i.type == "фірмові страви" %}
+    <a href = "/dishes/{{i.id}}" ><p>Назва :{{i.name}}</p></a>
+    <p>Склад: {{i.description}}</p>
+    <p>Вага:{{i.weight}}</p>
+    <p>Ціна :{{i.price}}</p>
+    <p>Вид страви:{{i.type}}</p>
+{% if user.is_superuser %}
+<form action = "/del/{{i.id}}/" method = "POST">{% csrf_token %}
+        <input class  ="button" type = "submit"  value = "Видалити">
+        </form>
+{% endif %}
+{% endif %}
+{% endfor%}
+{%endblock%}

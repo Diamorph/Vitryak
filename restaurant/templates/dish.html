@@ -7,9 +7,10 @@
     <p>Вага:{{i.weight}}</p>
     <p>Ціна :{{i.price}}</p>
     <p>Вид страви:{{i.type}}</p>
-
+{% if user.is_superuser %}
 <form action = "/del/{{i.id}}/" method = "POST">{% csrf_token %}
         <input class  ="button" type = "submit"  value = "Видалити">
         </form>
+{% endif %}
 {% endfor%}
 {%endblock%}

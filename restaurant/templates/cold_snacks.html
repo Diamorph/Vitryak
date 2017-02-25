@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block garnish %}
 {%for i in dishes %}
-{% if i.type == "гарніри" %}
+{% if i.type == "холодні закуски" %}
     <a href = "/dishes/{{i.id}}" ><p>Назва :{{i.name}}</p></a>
     <p>Склад: {{i.description}}</p>
     <p>Вага:{{i.weight}}</p>

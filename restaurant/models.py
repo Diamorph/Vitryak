@@ -6,24 +6,29 @@ from django.utils import timezone
 
 class Dish(models.Model):
 
-    BRAND_FOOD = 'фірмові_страви' # фірмова страва
+    BRAND_FOOD = 'фірмові страви' # фірмова страва
     SALAD  = 'салат' #cалат
-    COLD_SNECK = 'холодні_закуски' # холодна закуска
-    HOT_SNECK = 'гарячі_закуски' #гаряча
-    FIRST_DISH = 'перші_страви'
-    SECOND_DISH = 'другі_страви'
+    COLD_SNECK = 'холодні закуски' # холодна закуска
+    HOT_SNECK = 'гарячі закуски' #гаряча
+    FIRST_DISH = 'перші страви'
+    SECOND_DISH = 'другі страви'
     GARNISH = 'гарніри'
     PANCAKES = 'деруни' # деруни та гречаники
+    DESSERTS = 'десерти'
     TEA = 'чай'
     COFFE = 'кава'
+    AlCOHOL = 'алкоголь'
     TYPE = (
-        (BRAND_FOOD , 'фірмові_страви'),
+        (BRAND_FOOD , 'фірмові страви'),
         (SALAD , 'салат'),
         (COLD_SNECK , 'холодні закуски'),
         (HOT_SNECK , 'гарячі закуски'),
         (FIRST_DISH , 'перші страви'),
         (SECOND_DISH , 'другі страви'),
         (GARNISH , 'гарніри'),
+        (PANCAKES, 'деруни'),
+        (DESSERTS, 'десерти'),
+        (AlCOHOL, 'алкоголь'),
         (TEA , 'чай'),
         (COFFE , 'кава'),
     )
